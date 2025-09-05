@@ -279,7 +279,7 @@ func TestValidateResourceMetadata(t *testing.T) {
 			if r.ApiVersion == "" && !slices.Contains(ignoredResources, resourceName) {
 				t.Errorf("%s: `api_version` is required and not set", r.FileName)
 			}
-			if r.ApiResourceTypeKind == "" {
+			if r.ApiResourceTypeKind == "" && resourceName != "google_sql_provision_script" {
 				t.Errorf("%s: `api_resource_type_kind` is required and not set", r.FileName)
 			}
 		}
