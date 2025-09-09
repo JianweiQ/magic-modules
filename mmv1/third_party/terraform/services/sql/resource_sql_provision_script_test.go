@@ -86,6 +86,7 @@ resource "google_sql_user" "iam_user" {
   name     = "admin@hashicorptest.com"
   instance = google_sql_database_instance.instance.name
   type     = "CLOUD_IAM_USER"
+  # database_role = "cloudsqlsuperuser"
 }
 
 resource "google_sql_provision_script" "script" {
@@ -116,6 +117,7 @@ resource "google_sql_user" "iam_user" {
   name     = "admin@hashicorptest.com"
   instance = google_sql_database_instance.instance.name
   type     = "CLOUD_IAM_USER"
+  # database_role = "cloudsqlsuperuser"
 }
 
 resource "google_sql_database" "database" {

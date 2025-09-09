@@ -38,6 +38,7 @@ resource "google_sql_user" "iam_user" {
   name     = "gcp-account-used-by-terraform@example.com"
   instance = google_sql_database_instance.instance.name
   type     = "CLOUD_IAM_USER"
+  # database_role = "cloudsqlsuperuser"  # The role grants privileges to the user. Change it to a smaller role for stricter access control.
 }
 
 resource "google_sql_database" "database" {

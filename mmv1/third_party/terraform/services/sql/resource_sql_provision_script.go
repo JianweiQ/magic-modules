@@ -124,9 +124,9 @@ func resourceSqlProvisionScriptCreate(d *schema.ResourceData, meta interface{}) 
 		executeSqlPayload).Do()
 
 	if err != nil {
-		return fmt.Errorf("Error, failed to run script %s on instance %s: %s", name, instance, err)
+		return fmt.Errorf("Error, failed to run script %s on instance %s: %v", name, instance, err)
 	}
-	log.Printf("[INFO] response from the execution of script %s on instance %s: %s", name, instance, resp)
+	log.Printf("[INFO] response from the execution of script %s on instance %s: %+v", name, instance, resp)
 
 	d.SetId(fmt.Sprintf("%s/%s", instance, name))
 	return nil
